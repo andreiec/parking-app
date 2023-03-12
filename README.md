@@ -1,2 +1,4 @@
-# parking-app
-Parking App for UI/UX course.
+## Project setup
+- `git clone`
+- `npm install`
+- `npm run dev`
