@@ -7,6 +7,8 @@ import {
     HStack
   } from '@chakra-ui/react';
 
+import { Link } from 'react-router-dom'
+
 function Navbar() {
     return (
         <Flex bg='white' w='100%' h='7rem' px='5rem' color='black'>
@@ -18,10 +20,10 @@ function Navbar() {
             <Spacer />
 
             <HStack spacing='3rem'>
-                <Text>Acasă</Text>
-                <Text>Despre</Text>
-                <Text>Rezervă</Text>
-                <Text>Contact</Text>
+                <Link to='/'><Text>Acasă</Text></Link>
+                <Link to='/despre'><Text>Despre</Text></Link>
+                <Link to='/rezerva'><Text>Rezervă</Text></Link>
+                <Link to='/contact'><Text>Contact</Text></Link>
             </HStack>
         </Flex>
     );
