@@ -1,8 +1,6 @@
 function Home() {
     return (
-        <Box minH='300px' bg='blue.200'>
-            aaa
-        </Box>
+        <>Hello world this is Home page!</>
     )
 }
 

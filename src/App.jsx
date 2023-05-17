@@ -1,13 +1,16 @@
-import { Box } from '@chakra-ui/react'
-import Navbar from './components/Navbar'
-import './App.css'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from './pages/Home'
+import Layout from './pages/Layout';
 
 function App() {
     return (
-        <Box>
-            <Navbar></Navbar>
-        </Box>
-
+        <BrowserRouter>
+            <Routes>
+                <Route element={<Layout />}>
+                    <Route index element={<Home />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
     )
 }
 
