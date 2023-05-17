@@ -11,10 +11,10 @@ import { Link } from 'react-router-dom'
 
 function Navbar() {
     return (
-        <Flex bg='white' w='100%' h='7rem' px='5rem' color='black'>
+        <Flex bg='white' w='100%' h='7rem' px='20rem' color='black'>
             <Center>
-                <Image src='logo_uiux.jpg' alt='logo uiux' maxW='5rem'/>
-                <Text ml='15px' mb='1px' fontWeight='bold' fontSize='3xl'>Parchează</Text>
+                <Image src='logo_uiux.jpg' alt='logo uiux' maxW='3rem'/>
+                <Text ml='15px' mb='1px' fontWeight='bold' fontSize='2xl'>Parchează</Text>
             </Center>
 
             <Spacer />
