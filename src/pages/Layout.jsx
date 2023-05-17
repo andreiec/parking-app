@@ -1,6 +1,7 @@
 import { Box, Flex, Center } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
 import Navbar from '../components/Navbar'
+import Footer from "../components/Footer";
 
 function Layout() {
     return (
@@ -10,7 +11,7 @@ function Layout() {
                 <Center>
                     <Outlet />
                 </Center>
-                {/*<Footer />*/}
+                <Footer />
             </Flex>
         </Box>
     );
