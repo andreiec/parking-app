@@ -10,18 +10,19 @@ import {
 import { FaPlayCircle } from 'react-icons/fa'
 import HomeCard from "../components/HomeCard";
 import Parteneri from "../components/Parteneri";
+import { Link } from 'react-router-dom'
 
 function Home() {
     return (
-        <Stack spacing='6rem' mt='2rem'>
+        <Stack spacing='6rem' mt='2rem' mb='2rem'>
             <Flex maxW='100rem'>
                 <Flex flexDir='column' maxW='30rem'>
                     <Text fontSize='md' fontWeight='bold'>REVOLUȚIA DIGITALĂ</Text>
                     <Text fontSize='4xl' fontWeight='bold'>Cea Mai De Încredere Soluție Pentru Parcarea Autoturismelor Personale</Text>
                     
                     <HStack mt='4rem' spacing='15px'>
-                        <Button colorScheme="blue" minW='8rem'>Rezervă</Button>
-                        <Button variant='outline' color='black' minW='8rem' leftIcon={<FaPlayCircle />}>Demo</Button>
+                        <Link to='rezerva'><Button colorScheme="blue" minW='8rem'>Rezervă</Button></Link>
+                        <a href='https://www.youtube.com/watch?v=8ya9AaCqm0I'><Button variant='outline' color='black' minW='8rem' leftIcon={<FaPlayCircle />}>Demo</Button></a>
                     </HStack>
                 </Flex>
 

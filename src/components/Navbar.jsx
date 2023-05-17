@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom'
 function Navbar() {
     return (
         <Flex bg='white' w='100%' h='7rem' color='black' justifyContent='center'>
-            <Flex w='70%'>
+            <Flex w='70%' flexWrap='wrap'>
                 <Center w='fit-content'>
                     <Image src='logo_uiux.jpg' alt='logo uiux' maxW='3rem'/>
                     <Text ml='15px' mb='1px' fontWeight='bold' fontSize='2xl'>Parchează</Text>
