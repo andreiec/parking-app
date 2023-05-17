@@ -5,15 +5,15 @@ import {
     Button,
     HStack,
     Image,
-    Card,
-    CardBody,
     Stack
 } from "@chakra-ui/react";
 import { FaPlayCircle } from 'react-icons/fa'
+import HomeCard from "../components/HomeCard";
+import Parteneri from "../components/Parteneri";
 
 function Home() {
     return (
-        <Stack spacing='7rem' mt='2rem'>
+        <Stack spacing='6rem' mt='2rem'>
             <Flex maxW='100rem'>
                 <Flex flexDir='column' maxW='30rem'>
                     <Text fontSize='md' fontWeight='bold'>REVOLUȚIA DIGITALĂ</Text>
@@ -31,36 +31,12 @@ function Home() {
             </Flex>
 
             <HStack spacing='auto'>
-                <Card>
-                    <CardBody maxW='16rem' minH='18rem'>
-                        <Stack spacing='1rem'>
-                            <Text fontSize='4xl' fontWeight='bold'>01.</Text>
-                            <Text fontSize='2xl' fontWeight='bold'>Sigur</Text>
-                            <Text fontWeight='light'>Ne folosim de cele mai avansate tehnologii pentru securizarea datelor.</Text>
-                        </Stack>
-                    </CardBody>
-                </Card>
-
-                <Card>
-                <CardBody maxW='16rem' minH='18rem'>
-                        <Stack spacing='1rem'>
-                            <Text fontSize='4xl' fontWeight='bold'>02.</Text>
-                            <Text fontSize='2xl' fontWeight='bold'>Digital</Text>
-                            <Text fontWeight='light'>Totul este digital, fără ghișee. Fara bătăi de cap.</Text>
-                        </Stack>
-                    </CardBody>
-                </Card>
-
-                <Card>
-                <CardBody maxW='16rem' minH='18rem'>
-                        <Stack spacing='1rem'>
-                            <Text fontSize='4xl' fontWeight='bold'>03.</Text>
-                            <Text fontSize='2xl' fontWeight='bold'>Rapid</Text>
-                            <Text fontWeight='light'>Doar din câteva clickuri îți rezervi instant un loc de parcare.</Text>
-                        </Stack>
-                    </CardBody>
-                </Card>
+                <HomeCard data={{number: '01.', title: 'Sigur', description: 'Ne folosim de cele mai avansate tehnologii pentru securizarea datelor.'}} />
+                <HomeCard data={{number: '02.', title: 'Digital', description: 'Totul este digital, fără ghișee. Fara bătăi de cap.'}} />
+                <HomeCard data={{number: '03.', title: 'Rapid', description: 'Doar din câteva clickuri îți rezervi instant un loc de parcare.'}} />
             </HStack>
+
+            <Parteneri />
         </Stack>
     )
 }

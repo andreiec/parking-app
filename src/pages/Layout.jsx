@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 
 function Layout() {
     return (
-        <Box minH="100vh" minW='100vw'>
+        <Box minH="100vh" minW='100%'>
             <Flex flexDir="column" minH="100vh">
                 <Navbar />
                 <Center>
