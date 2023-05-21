@@ -1,4 +1,4 @@
-import { Box, Button, Center, Flex, FormLabel, Image, Input, Spacer, Text, Textarea, VStack, useToast, Icon } from "@chakra-ui/react";
+import { Box, Button, Flex, FormLabel, Image, Input, Spacer, Text, Textarea, VStack, useToast, Icon } from "@chakra-ui/react";
 import { useFormik } from "formik";
 import { MdEmail, MdPhone } from 'react-icons/md'
 
@@ -18,7 +18,7 @@ function Contact() {
         initialValues: {
             'name': '',
             'mail': '',
-            'service': '',
+            'phone': '',
             'message': '',
         },
         onSubmit: (values) => {
@@ -31,10 +31,10 @@ function Contact() {
 
     return (
         <Box mt='2rem' mb='5rem'>
-            <Text fontSize='2xl' fontWeight='bold'>Lasă-ne un mesaj</Text>
-
             <Flex flexWrap='wrap'>
                 <Box>
+                    <Text fontSize='2xl' fontWeight='bold'>Lasă-ne un mesaj</Text>
+
                     <form onSubmit={formik.handleSubmit}>
                         <FormLabel htmlFor='name' mt='1rem'>Nume</FormLabel>
                         <Input
@@ -47,23 +47,23 @@ function Contact() {
 
                         <FormLabel htmlFor='email' mt='1rem'>Adresă de Mail</FormLabel>
                         <Input
-                            id='email'
-                            name='email'
-                            type='email'
+                            id='mail'
+                            name='mail'
+                            type='text'
                             onChange={formik.handleChange}
                             value={formik.values.mail}
                         />
 
-                        <FormLabel htmlFor='email' mt='1rem'>Număr de Telefon</FormLabel>
+                        <FormLabel htmlFor='phone' mt='1rem'>Număr de Telefon</FormLabel>
                         <Input
                             id='phone'
                             name='phone'
-                            type='tel'
+                            type='text'
                             onChange={formik.handleChange}
                             value={formik.values.phone}
                         />
 
-                        <FormLabel htmlFor='email' mt='1rem'>Mesaj</FormLabel>
+                        <FormLabel htmlFor='message' mt='1rem'>Mesaj</FormLabel>
                         <Textarea
                             id='message'
                             name='message'
@@ -77,15 +77,13 @@ function Contact() {
                 </Box>
 
                 <Spacer w='10rem'/>
-                
-                <Center>
-                    <VStack rowGap='2rem' alignItems='start'>
-                        <Text fontSize='2xl' fontWeight='bold'>Contact</Text>
-                        <Flex><Icon as={MdPhone} mt='4px' mr='5px'/><Text>+40737139333</Text></Flex>
-                        <Flex><Icon as={MdEmail} mt='4px' mr='5px'/><Text>info@parcheaza.ro</Text></Flex>
-                        <Image src='location.png' maxH='15rem'/>
-                    </VStack>
-                </Center>
+
+                <VStack rowGap='2rem' alignItems='start'>
+                    <Text fontSize='2xl' fontWeight='bold'>Contact</Text>
+                    <Flex><Icon as={MdPhone} mt='4px' mr='5px'/><Text>+40737139333</Text></Flex>
+                    <Flex><Icon as={MdEmail} mt='4px' mr='5px'/><Text>info@parcheaza.ro</Text></Flex>
+                    <Image src='location.png' maxH='15rem'/>
+                </VStack>
             </Flex>
         </Box>
     )
