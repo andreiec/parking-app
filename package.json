@@ -12,6 +12,7 @@
     "@chakra-ui/react": "^2.6.1",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
+    "formik": "^2.2.9",
     "framer-motion": "^10.12.12",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
