@@ -1,5 +1,6 @@
-import { Box, Button, Center, Flex, FormLabel, Image, Input, Spacer, Text, Textarea, VStack, useToast } from "@chakra-ui/react";
+import { Box, Button, Center, Flex, FormLabel, Image, Input, Spacer, Text, Textarea, VStack, useToast, Icon } from "@chakra-ui/react";
 import { useFormik } from "formik";
+import { MdEmail, MdPhone } from 'react-icons/md'
 
 function Contact() {
 
@@ -80,8 +81,8 @@ function Contact() {
                 <Center>
                     <VStack rowGap='2rem' alignItems='start'>
                         <Text fontSize='2xl' fontWeight='bold'>Contact</Text>
-                        <Text>+40737139333</Text>
-                        <Text>info@parcheaza.ro</Text>
+                        <Flex><Icon as={MdPhone} mt='4px' mr='5px'/><Text>+40737139333</Text></Flex>
+                        <Flex><Icon as={MdEmail} mt='4px' mr='5px'/><Text>info@parcheaza.ro</Text></Flex>
                         <Image src='location.png' maxH='15rem'/>
                     </VStack>
                 </Center>
