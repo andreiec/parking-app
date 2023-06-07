@@ -1,7 +1,10 @@
-import { Box, Button, Flex, FormLabel, Image, Input, Spacer, Text, useToast, Center } from "@chakra-ui/react";
+import { Box, Button, Flex, FormLabel, Image, Input, Spacer, Text, useToast, Center, Grid } from "@chakra-ui/react";
 import { useFormik } from "formik";
+import { useEffect, useState } from "react";
 
 function Rezerva() {
+
+    const [state, setState] = useState(JSON.parse(localStorage.getItem("data")) ?? []);
 
     const email_sent_toast = {
         title: 'Rezervare efectuată cu succes.',
@@ -22,12 +25,16 @@ function Rezerva() {
             'hours': ''
         },
         onSubmit: (values) => {
-            toast(email_sent_toast)
-            //alert(JSON.stringify(values, null, 2))
+            toast(email_sent_toast);
+            const newData = state.concat([{start: new Date(), end: new Date(new Date().getTime() + values.hours * 60 * 60 * 1000)}]);
+            localStorage.setItem("data", JSON.stringify(newData));
+            setState(newData);
         }
     })
 
-
+    const count = 50 - state.filter(x => 
+        new Date(new Date(new Date(x.start).getTime())) < new Date() 
+        && new Date() < new Date(new Date(x.end).getTime())).length;
 
     return (
         <Box mt='2rem' mb='5rem'>
@@ -88,7 +95,13 @@ function Rezerva() {
                 <Spacer w='10rem'/>
 
                 <Center>
-                    <Image src='undraw_Date_picker_re_r0p8.png' maxH='15rem'/>
+                    <Grid>
+                        <Center>
+                            <Text fontSize="2xl" color="green" as="b">{count}</Text> 
+                            <Text style={{"margin-left": "10px"}}>locuri disponibile</Text>
+                        </Center>
+                        <Image src='undraw_Date_picker_re_r0p8.png' maxH='15rem'/>
+                    </Grid>
                 </Center>
             </Flex>
         </Box>
